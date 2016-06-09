@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,10 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText tvFirstNumber;
     private EditText tvSecondNumber;
-    private Button btnAdd;
-    private Button btnSub;
-    private Button btnDiv;
-    private Button btnMulti;
     private TextView tvResult;
 
     @Override
@@ -26,10 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
         tvFirstNumber = (EditText) findViewById(R.id.tvFirstNumber);
         tvSecondNumber = (EditText) findViewById(R.id.tvSecondNumber);
-        btnAdd = (Button) findViewById(R.id.btnAdd);
-        btnSub = (Button) findViewById(R.id.btnSub);
-        btnDiv = (Button) findViewById(R.id.btnDiv);
-        btnMulti = (Button) findViewById(R.id.btnMulti);
         tvResult = (TextView) findViewById(R.id.tvResult);
 
     }
@@ -38,16 +29,23 @@ public class MainActivity extends AppCompatActivity {
 
         int id = view.getId();
         if (id == R.id.btnAdd || id == R.id.btnSub || id == R.id.btnDiv || id == R.id.btnMulti) {
-            if (tvFirstNumber.getText().toString().length() == 0) {
+            if (tvFirstNumber.getText().toString().length() < 1) {
                 Toast.makeText(MainActivity.this, "첫번째 수를 입력하세요.", Toast.LENGTH_SHORT).show();
                 tvFirstNumber.requestFocus();
+                return;
             }
 
-            if (tvSecondNumber.getText().toString().length() == 0) {
+            if (tvSecondNumber.getText().toString().length() < 1) {
                 Toast.makeText(MainActivity.this, "두번째 수를 입력하세요.", Toast.LENGTH_SHORT).show();
                 tvSecondNumber.requestFocus();
+                return;
             }
 
+            if(tvSecondNumber.getText().toString() == "0" && id == R.id.btnDiv) {
+                Toast.makeText(MainActivity.this, "0으로 나눌 수 없습니다. 다시 두번째 수를 입력하세요.", Toast.LENGTH_SHORT).show();
+                tvSecondNumber.requestFocus();
+                return;
+            }
             Intent intent = new Intent(getApplicationContext(), CalcActivity.class);
             intent.putExtra("tvFirstNumber", tvFirstNumber.getText().toString());
             intent.putExtra("tvSecondNumber", tvSecondNumber.getText().toString());
