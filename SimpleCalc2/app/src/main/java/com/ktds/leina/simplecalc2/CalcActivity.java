@@ -30,16 +30,16 @@ public class CalcActivity extends AppCompatActivity {
         String operatorString = "";
         result = 0;
 
-        if (operator == 1) {
+        if (operator == R.id.btnAdd) {
             result = Integer.parseInt(firstNum) + Integer.parseInt(secondNum);
             operatorString = "+";
-        } else if (operator == 2) {
+        } else if (operator == R.id.btnSub) {
             result = Integer.parseInt(firstNum) - Integer.parseInt(secondNum);
             operatorString = "-";
-        } else if (operator == 3) {
+        } else if (operator == R.id.btnDiv) {
             result = Float.parseFloat(firstNum) / Float.parseFloat(secondNum);
             operatorString = "/";
-        } else if (operator == 4) {
+        } else if (operator == R.id.btnMulti) {
             result = Integer.parseInt(firstNum) * Integer.parseInt(secondNum);
             operatorString = "*";
         }

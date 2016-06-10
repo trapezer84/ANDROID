@@ -49,18 +49,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), CalcActivity.class);
             intent.putExtra("tvFirstNumber", tvFirstNumber.getText().toString());
             intent.putExtra("tvSecondNumber", tvSecondNumber.getText().toString());
-            int operator = 0;
-            // 어떻게 operator을 보낼 수 있을까? id를 보낸다면 알 수 있는 방법이 있나?
-            if (id == R.id.btnAdd) {
-                operator = 1;
-            } else if (id == R.id.btnSub) {
-                operator = 2;
-            } else if (id == R.id.btnDiv) {
-                operator = 3;
-            } else if (id == R.id.btnMulti) {
-                operator = 4;
-            }
-            intent.putExtra("operator", operator);
+                        intent.putExtra("operator", id);
 
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             // intent으로 갔다가 다시 받아올 때, startActivity 말고 startActivityForResult 을 사용합니다.
