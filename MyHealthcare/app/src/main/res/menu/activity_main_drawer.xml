@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_opacity_black_24dp"
+            android:title="물이 어떻길래?" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_face_black_24dp"
+            android:title="물을 아껴씁시다!" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_local_drink_black_24dp"
+            android:title="오늘 물 마셨나요?" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_check_circle_black_24dp"
+            android:title="물 사용 체크" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
