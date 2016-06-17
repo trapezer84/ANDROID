@@ -1,0 +1,14 @@
+
+public class CounterThread2 implements Runnable{
+
+	private Main main; 
+	
+	@Override
+	public void run() {
+		for(int i =0; i< 100; i++) {
+			main.count++;
+		}
+		
+	}
+
+}

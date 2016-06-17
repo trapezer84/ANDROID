@@ -1,0 +1,13 @@
+
+public class CounterThread2 implements Runnable{
+	
+	
+	public int count = 0; 
+	
+	@Override
+	public void run() {
+		
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int numberOne = 0; 
+		numberOne = 10; 
+		numberOne = 20; 
+		
+		// °á°ú°ª : 0 
+		System.out.println(numberOne);
+		
+		Thread counter1 = new CounterThread();
+		Thread counter2 = new CounterThread();
+		
+	}
+
+}
